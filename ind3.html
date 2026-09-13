@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="sovereignty" content="absolute">
+    <meta name="cloud-dependency" content="0">
+    <title>NETSECUREPRO | Génération 11</title>
+    <style>
+        /* RESET & BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: #000000; 
+            color: #00ff00; 
+            font-family: 'Courier New', Courier, monospace; 
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* GRILLE DE FOND (Pure CSS) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* CONTENEUR */
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; border: 1px solid #111; min-height: 100vh; }
+
+        /* TYPOGRAPHIE */
+        h1 { font-size: 2.5rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 10px; border-bottom: 2px solid #00ff00; padding-bottom: 10px; }
+        h2 { font-size: 1.2rem; color: #00cc00; margin: 40px 0 15px 0; text-transform: uppercase; letter-spacing: 2px; }
+        p { font-size: 0.95rem; color: #aaaaaa; margin-bottom: 20px; }
+        .highlight { color: #00ff00; font-weight: bold; }
+        .warning { color: #ff3333; font-weight: bold; }
+
+        /* CITATION */
+        .manifesto { 
+            border-left: 2px solid #00ff00; 
+            padding-left: 20px; 
+            margin: 40px 0; 
+            font-style: italic; 
+            color: #00ff00; 
+            font-size: 1.1rem;
+        }
+
+        /* LISTE DES PRODUITS */
+        .arsenal { list-style: none; }
+        .arsenal li { 
+            border: 1px solid #222; 
+            padding: 15px; 
+            margin-bottom: 10px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            transition: border-color 0.3s;
+        }
+        .arsenal li:hover { border-color: #00ff00; }
+        .arsenal .nom { font-weight: bold; color: #fff; }
+        .arsenal .desc { font-size: 0.8rem; color: #666; display: block; margin-top: 4px; }
+        .arsenal .statut { color: #00ff00; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid #00ff00; padding: 4px 8px; }
+
+        /* BOUTON D'ACTION */
+        .action-zone { margin-top: 60px; text-align: center; border-top: 1px solid #222; padding-top: 40px; }
+        .btn { 
+            display: inline-block; 
+            background: transparent; 
+            color: #00ff00; 
+            border: 1px solid #00ff00; 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            font-family: inherit; 
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn:hover { background: #00ff00; color: #000; }
+
+        /* FOOTER */
+        .footer { margin-top: 80px; border-top: 1px solid #222; padding-top: 20px; text-align: center; font-size: 0.75rem; color: #333; }
+        
+        /* ANIMATION SCAN */
+        @keyframes scan { 0% { top: -10%; opacity: 0; } 50% { opacity: 0.5; } 100% { top: 110%; opacity: 0; } }
+        .scan-line { position: fixed; top: -10%; left: 0; width: 100%; height: 2px; background: #00ff00; box-shadow: 0 0 10px #00ff00; animation: scan 8s linear infinite; z-index: -1; pointer-events: none; }
+    </style>
+</head>
+<body>
+    <div class="scan-line"></div>
+    
+    <div class="container">
+        <h1>NETSECUREPRO</h1>
+        <p style="color: #00ff00; letter-spacing: 1px; margin-bottom: 40px;">ARCHITECTURE SOUVERAINE &bull; GÉNÉRATION 11</p>
+
+        <div class="manifesto">
+            "L'industrie de la cybersécurité souffre d'un paradoxe mortel : elle vend la protection des données en les stockant sur les serveurs de ceux qui les menacent."
+        </div>
+
+        <h2>Le Diagnostic</h2>
+        <p>
+            Vos audits Loi 25 sont probablement traités par des outils SaaS américains. Vos DSI utilisent des LLM cloud qui violent l'Article 17. Vos rapports confidentiels transitent par des infrastructures soumises au CLOUD Act.
+        </p>
+        <p>
+            <span class="warning">Ce n'est pas de la sécurité. C'est de la complicité involontaire.</span>
+        </p>
+
+        <h2>L'Architecture Z-CORE</h2>
+        <p>
+            Nous avons éliminé le problème à la racine. Z-CORE n'est pas une application. C'est un écosystème isolé. Il s'exécute en mémoire volatile (<span class="highlight">:memory:</span>). Il ne connaît pas le IPv6. Il refuse toute connexion sortante non autorisée.
+        </p>
+        <p>
+            Quand l'analyse est terminée, le serveur s'éteint. Il ne reste <span class="highlight">aucune trace</span> sur le disque dur, aucune trace sur le réseau, aucune trace chez un tiers.
+        </p>
+
+        <h2>L'Arsenal</h2>
+        <ul class="arsenal">
+            <li>
+                <div>
+                    <span class="nom">Conformité Loi 25</span>
+                    <span class="desc">Audit complet sans transmission de données</span>
+                </div>
+                <span class="statut">Actif</span>
+            </li>
+            <li>
+                <div>
+                    <span class="nom">Cockpit Souverain</span>
+                    <span class="desc">IA et RAG entièrement locaux, sans API Cloud</span>
+                </div>
+                <span class="statut">Actif</span>
+            </li>
+            <li>
+                <div>
+                    <span class="nom">Clé Juridique Physique</span>
+                    <span class="desc">Système complet déconnecté d'internet sur support physique</span>
+                </div>
+                <span class="statut">Actif</span>
+            </li>
+            <li>
+                <div>
+                    <span class="nom">Audit d'Étanchéité</span>
+                    <span class="desc">Preuve cryptographique de l'isolement de votre réseau</span>
+                </div>
+                <span class="statut">Actif</span>
+            </li>
+        </ul>
+
+        <div class="action-zone">
+            <p style="margin-bottom: 30px; color: #888;">Les accès sont restreints. Le processus débute par une vérification d'identité.</p>
+            <a href="mailto:contact@netsecurepro.ca?subject=Demande%20d%27acc%C3%A8s%20G%C3%A9n%C3%A9ration%2011" class="btn">DEMANDER L'ACCÈS</a>
+        </div>
+
+        <div class="footer">
+            NETSECUREPRO &bull; MONTRÉAL &bull; 0 OCTET TRANSMIS À L'EXTÉRIEUR LORS DU CHARGEMENT DE CETTE PAGE<br>
+            AUCUN COOKIE &bull; AUCUN SCRIPT TIERCE &bull; AUCUNE ANALYTIQUE
+        </div>
+    </div>
+</body>
+</html>

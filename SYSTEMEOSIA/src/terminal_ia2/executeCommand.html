@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetSecurePro IA - Command Executor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+    }
+    h1 { color: #58a6ff; }
+    .container {
+      width: 90%; max-width: 600px;
+      background: #161b22;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(88,166,255,0.3);
+      padding: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+    input {
+      background: #0d1117;
+      color: #e6edf3;
+      border: 1px solid #30363d;
+    }
+    button {
+      background-color: #238636;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #2ea043; }
+    pre {
+      background: #010409;
+      padding: 10px;
+      border-radius: 5px;
+      max-height: 300px;
+      overflow-y: auto;
+      color: #00ff90;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Terminal IA - NetSecurePro</h1>
+    <input type="text" id="command" placeholder="Entrez votre commande (ex: ls, pwd, whoami)" />
+    <button onclick="sendCommand()">Exécuter</button>
+    <h3>Résultat :</h3>
+    <pre id="output">...</pre>
+  </div>
+
+  <script>
+    async function sendCommand() {
+      const cmd = document.getElementById('command').value;
+      const outputArea = document.getElementById('output');
+      outputArea.textContent = '⏳ Exécution en cours...';
+
+      try {
+        const res = await fetch('http://127.0.0.1:5000/execute', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ command: cmd })
+        });
+
+        const data = await res.json();
+        outputArea.textContent = data.output || 'Aucune sortie.';
+      } catch (error) {
+        outputArea.textContent = '⚠️ Erreur de connexion à l’API Flask : ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
